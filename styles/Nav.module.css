@@ -1,0 +1,12 @@
+.header {
+    font-family: 'Lato', sans-serif;
+    height: 50px;
+    background: #0089ff40;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .header a {
+    text-decoration: none;
+  }
