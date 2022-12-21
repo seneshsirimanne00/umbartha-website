@@ -11,7 +11,6 @@ export interface ILayoutProps {
 const Layout: React.FC<ILayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
       {children}
       <Footer />
     </>

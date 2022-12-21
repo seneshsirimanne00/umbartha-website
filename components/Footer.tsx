@@ -1,9 +1,10 @@
 import React from "react";
+import { FooterContainer } from "./styled";
 
 export interface IFooterProps {}
 
 const Footer: React.FC<IFooterProps> = () => {
-  return <h1>Footer</h1>;
+  return <FooterContainer>footer</FooterContainer>;
 };
 
 export default Footer;
