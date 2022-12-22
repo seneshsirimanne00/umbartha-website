@@ -1,7 +1,17 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import { Button } from "antd";
-import { Banner } from "./homeStyles";
+import { Button, Col, Row } from "antd";
+import {
+  Banner,
+  IntroBox,
+  IntroBoxHeader,
+  IntroBoxSubHeader,
+  IntroSection,
+  ServicesBox,
+  ServicesSection,
+  ServicesTitleSection,
+  ServicesTypesSection,
+} from "./homeStyles";
 import Header from "../components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,6 +27,41 @@ export default function Home() {
       </Head>
       <Header home={true} />
       <Banner></Banner>
+
+      <IntroSection>
+        <IntroBox>
+          <IntroBoxHeader>
+            A Dedicated Team committed to supporting with a listening ear
+          </IntroBoxHeader>
+          <IntroBoxSubHeader>
+            "Our vision, mission, and core values guide us as we seek to fulfill
+            our calling to support and care for people who need to be heard and
+            understood."
+          </IntroBoxSubHeader>
+        </IntroBox>
+      </IntroSection>
+
+      <ServicesSection>
+        <ServicesBox>
+          <ServicesTitleSection>
+            <h1>OUR SERVICES</h1>
+            <Button>VIEW ALL ></Button>
+          </ServicesTitleSection>
+          <div>
+            <Row>
+              <Col xs={2} sm={4} md={6} lg={8} >
+                Col
+              </Col>
+              <Col xs={2} sm={4} md={6} lg={8} >
+                Col
+              </Col>
+              <Col xs={2} sm={4} md={6} lg={8} >
+                Col
+              </Col>
+            </Row>
+          </div>
+        </ServicesBox>
+      </ServicesSection>  
     </>
   );
 }

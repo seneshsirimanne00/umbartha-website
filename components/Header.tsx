@@ -29,9 +29,9 @@ const Header: React.FC<IHeaderProps> = ({ home }) => {
               <Link href="/">Home</Link>
               <Link href="/AboutUs">About</Link>
               <Link href="/Events">Events</Link>
-              <Link href="/ClientReviews">ClientReviews</Link>
+              <Link href="/ClientReviews">Client Reviews</Link>
               <Link href="/ContactUs">ContactUs</Link>
-              <Link href="/NewAppointments">NewAppointments</Link>
+              <Link href="/NewAppointments">New Appointments</Link>
             </NavDivRight>
           </NavDiv>
         </NavbarHome>
