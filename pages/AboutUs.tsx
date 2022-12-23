@@ -1,4 +1,5 @@
 import React from "react";
+import Banner from "../components/Banner";
 import Header from "../components/Header";
 import { EditedBtn } from "../components/styled";
 import { BUTTONS } from "../constants";
@@ -15,7 +16,7 @@ const AboutUs: React.FC<IAboutUsProps> = () => {
     <>
       <Header home={false} />
       <h1>AboutUs</h1>
-
+      <Banner mainHeader={"About US"} breadcrumb={"About"} />
       <EditedBtn>antd btn edited with styledcomponents</EditedBtn>
 
       <br />
