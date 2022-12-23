@@ -16,11 +16,16 @@ const lato = Lato({
 export interface IBannerProps {
   mainHeader: string;
   breadcrumb: string;
+  imagePath: string;
 }
 
-const Banner: React.FC<IBannerProps> = ({ mainHeader, breadcrumb }) => {
+const Banner: React.FC<IBannerProps> = ({
+  mainHeader,
+  breadcrumb,
+  imagePath,
+}) => {
   return (
-    <BannerContainer $imagePath="/bannerimg1.png">
+    <BannerContainer $imagePath={imagePath}>
       <BannerHeader className={lato.className}>{mainHeader}</BannerHeader>
       <BannerBreadcrumb>
         <BannerLink href="/">Home</BannerLink> | {breadcrumb}
