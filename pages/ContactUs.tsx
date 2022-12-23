@@ -8,7 +8,11 @@ const ContactUs: React.FC<IContactUsProps> = () => {
   return (
     <>
       <Header home={false} />
-      <Banner mainHeader={"Contact Us"} breadcrumb={"Contact"} />
+      <Banner
+        mainHeader={"Contact Us"}
+        breadcrumb={"Contact"}
+        imagePath={"/bannerimg1.png"}
+      />
     </>
   );
 };

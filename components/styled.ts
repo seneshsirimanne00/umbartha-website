@@ -12,7 +12,6 @@ export const NavbarHome = styled.nav`
   z-index: 600;
   position: fixed;
   width: 100vw;
-  font-weight: 300;
   text-decoration: none;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -23,6 +22,7 @@ export const NavbarHome = styled.nav`
     padding: 0 4% 8% 4%;
     color: black;
     fontsize: 15px;
+    font-weight: 400;
 
     &:hover {
       border-bottom: 4px solid #46c4c0;
@@ -84,7 +84,7 @@ export const NavDivRight = styled(NavDiv)`
 export const NavDivRightAlign = styled(NavDiv)`
   text-align: right;
   justify-content: flex-end;
-  fontsize: 14px;
+  font-size: 14px;
 `;
 
 export const EditedBtn = styled(Button)`
@@ -100,6 +100,9 @@ export const BannerContainer = styled.div<{ $imagePath: string }>`
   align-items: center;
   justify-content: center;
   background-image: url(${(props) => props.$imagePath});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 export const BannerHeader = styled.h1`
@@ -128,8 +131,73 @@ export const BannerLink = styled.a`
   text-shadow: 2px 2px 6px #04040459;
 `;
 
-export const FooterContainer = styled.div`
-  background: #b9f2ff;
+export const FooterContainer = styled.div<{ $footerImg: string }>`
   height: 40vh;
   width: 100vw;
+  background-image: url(${(props) => props.$footerImg});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const FooterWhiteBox = styled.div`
+  height: 27vh;
+  width: 79vw;
+  background: #ffffffd9;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+`;
+
+export const FooterIconContainer = styled.div`
+  height: 27vh;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: "Lato", sans-serif;
+  color: #00687c;
+  font-weight: 400;
+  padding: 0 2%;
+  justify-content: space-evenly;
+`;
+
+export const IconCircle = styled.div`
+  width: 69px;
+  height: 69px;
+  background: #80dcf1;
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+  cursor: pointer;
+  &:hover {
+    color: black;
+    background: white;
+  }
+`;
+
+export const IconHeading = styled.h4`
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 120%;
+`;
+
+export const IconPara = styled.p`
+  margin: 0;
+  font-weight: 400;
+  color: #4a545a;
+  font-family: "Josefin Sans", Sans-serif;
+  font-size: 90%;
+  font-weight: 300;
+  line-height: 1.5em;
 `;
