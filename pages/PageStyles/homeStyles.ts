@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import styled from "styled-components";
+import { device } from "../../devices";
 
 export const Banner = styled.div`
   height: 82vh;
@@ -21,7 +22,6 @@ export const IntroBox = styled.div`
   text-align: center;
   transform: translateY(-85px);
   font-size: 14px;
-  width: 614px;
   color: #ffffff;
   font-family: "Lato", sans-serif;
   width: 40%;
@@ -31,6 +31,12 @@ export const IntroBox = styled.div`
   justify-content: center;
   height: 15vh;
   border-radius: 5px;
+
+  @media ${device.tablet} {
+    width: unset;
+    height: unset;
+    padding: 10% 5%;
+  }
 `;
 
 export const IntroBoxHeader = styled.h2`
@@ -49,8 +55,6 @@ export const IntroBoxSubHeader = styled.p`
 `;
 
 export const ServicesSection = styled.div`
-  height: 211vh;
-  width: 100vw;
   padding-top: 21vh;
   // background-image: url(/servicessectionbak.png);
   background-repeat: no-repeat;
@@ -61,10 +65,14 @@ export const ServicesSection = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+
+  @media ${device.tablet} {
+    padding-top: 26vh;
+  }
 `;
 
 export const ServicesBox = styled.div`
-  height: 89vh;
+  height: 106vh;
   width: 60vw;
   background-color: #fffefe9c;
   filter: brightness(100%) contrast(100%) saturate(100%) blur(0px)
@@ -72,6 +80,11 @@ export const ServicesBox = styled.div`
   border-radius: 5px;
   box-shadow: 0px 0px 28px rgba(0, 0, 0, 0.22);
   margin-bottom: 10vh;
+
+  @media ${device.tablet} {
+    width: unset;
+    height: unset;
+  }
 `;
 
 export const ServicesTitleSection = styled.div`
@@ -111,6 +124,10 @@ export const ServiceBox = styled.div`
   padding: 5vh 2vw;
   flex-direction: column;
   background: white;
+
+  @media ${device.tablet} {
+    width: unset;
+  }
 `;
 
 export const ServiceBoxHeader = styled.h2`
@@ -118,7 +135,7 @@ export const ServiceBoxHeader = styled.h2`
   margin: 0;
   margin-bottom: 2vh;
   font-weight: 700;
-  font-size: 170%;
+  font-size: 150%;
   color: #00687c;
 `;
 
@@ -126,18 +143,17 @@ export const ServiceBoxSubHeader = styled.p`
   font-family: "Lato", sans-serif;
   margin: 0;
   font-weight: 400;
-  font-size: 130%;
+  font-size: 100%;
   color: #261552;
   line-height: 1.6em;
   text-align: center;
 `;
 
 export const PosterBox = styled.div`
-  height: 100vh;
   padding-top: 8vh;
   text-align: center;
   display: flex;
-  width: 100vw;
+  width: 100%;
   flex-direction: column;
   background-image: url(/posterSectionImg2.png);
   background-repeat: no-repeat;
@@ -165,39 +181,50 @@ export const PosterBoxPara = styled.p`
 `;
 
 export const PosterSection = styled.div`
-  height: 81vh;
   padding-top: 5vh;
   text-align: center;
   display: flex;
   flex-direction: row;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
 `;
 
 export const PosterSectionLeft = styled.div`
   display: flex;
-  height: 80vh;
   width: 39vw;
   justify-content: flex-end;
+  padding-bottom: 6vh;
+
+  @media ${device.tablet} {
+    width: unset;
+    justify-content: center;
+  }
 `;
 
 export const PosterSectionRight = styled.div`
   display: flex;
-  height: 57vh;
   width: 50vw;
   align-items: flex-start;
   padding: 6vh 3vw;
+
+  @media ${device.tablet} {
+    width: unset;
+    padding: 6vh 10vw;
+  }
 `;
 
 export const BookingBanner = styled.div`
   display: flex;
-  height: 30vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
+  padding: 5vh 0;
 `;
 
 export const ClientsSection = styled.div`
   display: flex;
-  height: 82vh;
   text-align: center;
   flex-direction: column;
   align-items: center;
@@ -209,14 +236,15 @@ export const ClientsSection = styled.div`
 
 export const ClientsContainer = styled.div`
   display: flex;
-  height: 65vh;
+  // height: 65vh;
   width: 63vw;
   text-align: center;
   flex-direction: column;
   align-items: center;
   background: #ffffffb3;
   margin-top: 5vh;
-  padding-top: 4vh;
+  padding: 4vh 8vw;
+  margin-bottom: 6vh;
 `;
 
 export const ClientsRBoxesContainer = styled.div`
@@ -230,9 +258,8 @@ export const ClientsRBox = styled.div`
   display: flex;
   text-align: left;
   align-items: center;
-  padding: 4vh;
-  height: 23vh;
-  width: 11vw;
+  padding: 5vh;
+  width: 14vw;
   margin: 1vw;
   background: #ffffff8a;
   margin-bottom: 5vh;

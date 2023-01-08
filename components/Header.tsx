@@ -1,7 +1,7 @@
 import Link from "next/link";
-import React from "react";
-import styles from "../styles/Nav.module.css";
+import React, { useCallback, useEffect, useState } from "react";
 import {
+  MenuIcon,
   Navbar,
   NavbarHome,
   NavDiv,
@@ -15,7 +15,34 @@ export interface IHeaderProps {
   home: boolean;
 }
 
+const useMediaQuery = (width: any) => {
+  const [targetReached, setTargetReached] = useState(false);
+
+  const updateTarget = useCallback((e: { matches: any }) => {
+    if (e.matches) {
+      setTargetReached(true);
+    } else {
+      setTargetReached(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia(`(min-width: ${width}px)`);
+    media.addListener(updateTarget);
+
+    if (media.matches) {
+      setTargetReached(true);
+    }
+
+    return () => media.removeListener(updateTarget);
+  }, [updateTarget, width]);
+
+  return targetReached;
+};
+
 const Header: React.FC<IHeaderProps> = ({ home }) => {
+  const isBreakpoint = useMediaQuery(999);
+
   return (
     <>
       {home ? (
@@ -23,16 +50,24 @@ const Header: React.FC<IHeaderProps> = ({ home }) => {
           <NavDivLogo>
             <Image src="/logo.png" width="200" height="50" alt={""} />
           </NavDivLogo>
-          <NavDiv>
-            <NavDivRightAlign>Contact us: 0778495758</NavDivRightAlign>
-            <NavDivRight>
-              <Link href="/">Home</Link>
-              <Link href="/AboutUs">About</Link>
-              <Link href="/Events">Events</Link>
-              <Link href="/ClientReviews">Client Reviews</Link>
-              <Link href="/ContactUs">ContactUs</Link>
-              <Link href="/NewAppointments">New Appointments</Link>
-            </NavDivRight>
+          <NavDiv $mobile={isBreakpoint ? false : true}>
+            <NavDivRightAlign $mobile={false}>
+              Contact us: 0778495758
+            </NavDivRightAlign>
+            {isBreakpoint ? (
+              <NavDivRight $mobile={false}>
+                <Link href="/">Home</Link>
+                <Link href="/AboutUs">About</Link>
+                <Link href="/Events">Events</Link>
+                <Link href="/ClientReviews">Client Reviews</Link>
+                <Link href="/ContactUs">ContactUs</Link>
+                <Link href="/NewAppointments">New Appointments</Link>
+              </NavDivRight>
+            ) : (
+              <NavDivRight $mobile={true}>
+                <MenuIcon />
+              </NavDivRight>
+            )}
           </NavDiv>
         </NavbarHome>
       ) : (
@@ -40,9 +75,11 @@ const Header: React.FC<IHeaderProps> = ({ home }) => {
           <NavDivLogo>
             <Image src="/logo.png" width="200" height="50" alt={""} />
           </NavDivLogo>
-          <NavDiv>
-            <NavDivRightAlign>Contact us: 0778495758</NavDivRightAlign>
-            <NavDivRight>
+          <NavDiv $mobile={isBreakpoint ? false : true}>
+            <NavDivRightAlign $mobile={false}>
+              Contact us: 0778495758
+            </NavDivRightAlign>
+            <NavDivRight $mobile={false}>
               <Link href="/">Home</Link>
               <Link href="/AboutUs">About</Link>
               <Link href="/Events">Events</Link>

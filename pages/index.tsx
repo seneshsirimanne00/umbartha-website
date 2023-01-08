@@ -57,9 +57,9 @@ export default function Home() {
             A Dedicated Team committed to supporting with a listening ear
           </IntroBoxHeader>
           <IntroBoxSubHeader>
-            "Our vision, mission, and core values guide us as we seek to fulfill
-            our calling to support and care for people who need to be heard and
-            understood."
+            &quot;Our vision, mission, and core values guide us as we seek to
+            fulfill our calling to support and care for people who need to be
+            heard and understood.&quot;
           </IntroBoxSubHeader>
         </IntroBox>
       </IntroSection>
@@ -72,7 +72,7 @@ export default function Home() {
           </ServicesTitleSection>
           <div>
             <Row>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service1.png"
@@ -87,7 +87,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service2.png"
@@ -102,7 +102,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service3.png"
@@ -121,7 +121,7 @@ export default function Home() {
             </Row>
 
             <Row>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service4.png"
@@ -136,7 +136,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service5.png"
@@ -151,7 +151,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service6.png"
@@ -220,7 +220,7 @@ export default function Home() {
         </PosterBox>
       </ServicesSection>
 
-      <BookingBanner>
+      {/* <BookingBanner>
         <SecondaryHeader>WE’RE HERE TO HELP YOU</SecondaryHeader>
         <MainHeader>GET IN TOUCH NOW</MainHeader>
         <PrimaryButton>MAKE A BOOKING</PrimaryButton>
@@ -256,7 +256,7 @@ export default function Home() {
           </ClientsRBoxesContainer>
           <SecondaryButton>READ MORE</SecondaryButton>
         </ClientsContainer>
-      </ClientsSection>
+      </ClientsSection> */}
     </>
   );
 }

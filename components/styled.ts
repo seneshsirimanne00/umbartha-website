@@ -1,5 +1,7 @@
+import { MenuOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import styled from "styled-components";
+import { device } from "../devices";
 
 export const NavbarHome = styled.nav`
   font-family: "Lato", sans-serif;
@@ -28,6 +30,15 @@ export const NavbarHome = styled.nav`
       border-bottom: 4px solid #46c4c0;
     }
   }
+
+  @media (max-width: 999px) {
+    background: #ffff;
+  }
+
+  @media ${device.tablet} {
+    height: 165px;
+    flex-direction: column;
+  }
 `;
 
 export const Navbar = styled.nav`
@@ -53,17 +64,17 @@ export const Navbar = styled.nav`
   }
 `;
 
-export const NavDiv = styled.nav`
+export const NavDiv = styled.div<{ $mobile: boolean }>`
   width: 50%;
-  height: 123px;
+  height: ${(props) => (props.$mobile ? "80px" : "123px;")};
   display: flex;
   align-items: center;
-  padding-left: 10%;
+  padding-left: ${(props) => (props.$mobile ? "0" : " 10%")};
   flex-direction: column;
-  justify-content: center;
+  justify-content: ${(props) => (props.$mobile ? "flex-end" : "center")};
 `;
 
-export const NavDivLogo = styled.nav`
+export const NavDivLogo = styled.div`
   width: 50%;
   height: 123px;
   display: flex;
@@ -72,19 +83,53 @@ export const NavDivLogo = styled.nav`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media ${device.tablet} {
+    align-items: center;
+    height: 80px;
+    padding-left: 0;
+    height: 80px;
+  }
 `;
 
-export const NavDivRight = styled(NavDiv)`
-  padding-left: 5%;
+export const NavDivRight = styled(NavDiv)<{ $mobile: boolean }>`
+  padding-left: ${(props) => (props.$mobile ? "0" : "5%")};
   flex-direction: row;
-  padding-right: 60%;
+  padding-right: ${(props) => (props.$mobile ? "0" : "60%")};
   align-items: flex-end;
+
+  @media ${device.tablet} {
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+    padding-left 0;
+    align-content: flex-start;
+  }
+`;
+
+export const MenuIcon = styled(MenuOutlined)`
+  font-size: 26px;
+  padding: 10px;
+  background: #46c4c0;
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+
+  @media ${device.tablet} {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const NavDivRightAlign = styled(NavDiv)`
   text-align: right;
   justify-content: flex-end;
   font-size: 14px;
+  @media ${device.tablet} {
+    align-items: center;
+    padding-left 0;
+    justify-content: flex-start;
+  }
 `;
 
 export const EditedBtn = styled(Button)`
@@ -133,7 +178,6 @@ export const BannerLink = styled.a`
 
 export const FooterContainer = styled.div<{ $footerImg: string }>`
   height: 40vh;
-  width: 100vw;
   background-image: url(${(props) => props.$footerImg});
   background-repeat: no-repeat;
   background-position: center;

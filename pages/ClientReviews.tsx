@@ -14,7 +14,6 @@ const ClientReviews: React.FC<IClientReviewsProps> = () => {
   return (
     <>
       <Header home={false} />
-      <h1>ClientReviews</h1>
       <Banner
         mainHeader={"Client Reviews"}
         breadcrumb={"Reviews"}
@@ -23,7 +22,7 @@ const ClientReviews: React.FC<IClientReviewsProps> = () => {
 
       <ReviewContainer>
         {ClientReviewsTemp.map((review) => (
-          <div>
+          <div key={review.Title}>
             <br />
             <ReviewHeader>{review.Title}</ReviewHeader>
             <ReviewPara>{review.para}</ReviewPara>
