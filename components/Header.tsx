@@ -12,10 +12,6 @@ import {
   NavbarRight,
   NavbarRightBottom,
   NavbarRightTop,
-  NavDiv,
-  NavDivLogo,
-  NavDivRight,
-  NavDivRightAlign,
 } from "./styled";
 
 export interface IHeaderProps {
@@ -87,14 +83,20 @@ const Header: React.FC<IHeaderProps> = ({ home }) => {
         </NavbarLeft>
         <NavbarRight>
           <NavbarRightTop>Contact us: 0778495758</NavbarRightTop>
-          <NavbarRightBottom>
-            <Link href="/">Home</Link>
-            <Link href="/AboutUs">About</Link>
-            <Link href="/Events">Events</Link>
-            <Link href="/ClientReviews">Client Reviews</Link>
-            <Link href="/ContactUs">ContactUs</Link>
-            <Link href="/NewAppointments">New Appointments</Link>
-          </NavbarRightBottom>
+          {isBreakpoint ? (
+            <NavbarRightBottom $isBreakPoint={false}>
+              <Link href="/">Home</Link>
+              <Link href="/AboutUs">About</Link>
+              <Link href="/Events">Events</Link>
+              <Link href="/ClientReviews">Client Reviews</Link>
+              <Link href="/ContactUs">ContactUs</Link>
+              <Link href="/NewAppointments">New Appointments</Link>
+            </NavbarRightBottom>
+          ) : (
+            <NavbarRightBottom $isBreakPoint={true}>
+              <MenuIcon onClick={showDrawer} />
+            </NavbarRightBottom>
+          )}
         </NavbarRight>
 
         {/* <NavDivLogo>

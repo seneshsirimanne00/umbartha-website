@@ -1,3 +1,4 @@
+import React from "react";
 import {
   EnvironmentOutlined,
   FacebookOutlined,
@@ -5,7 +6,6 @@ import {
   MailOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
-import React from "react";
 
 import {
   FooterContainer,

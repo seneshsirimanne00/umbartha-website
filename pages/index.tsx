@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import { Col, Row } from "antd";
+import Image from "next/image";
+
 import {
   Banner,
   BookingBanner,
@@ -29,7 +31,6 @@ import {
   ServiceTitleSecHeader,
 } from "./PageStyles/homeStyles";
 import Header from "../components/Header";
-import Image from "next/image";
 import {
   MainHeader,
   ParaJosefin,

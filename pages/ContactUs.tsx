@@ -42,12 +42,12 @@ const ContactUs: React.FC<IContactUsProps> = () => {
         breadcrumb={"Contact"}
         imagePath={"/bannerimg1.png"}
       />
-      <Footer contactPage={false} />
+      <Footer contactPage={true} />
       <br />
       <hr />
       <br />
 
-      {/* <ContainerBottom>
+      <ContainerBottom>
         <ContainerBottomRight>
           <MainHeader>Get in touch</MainHeader>
 
@@ -95,7 +95,7 @@ const ContactUs: React.FC<IContactUsProps> = () => {
             most important elements in counseling.” – Melanie Kanakaratne
           </p>
         </QuoteContainer>
-      </BannerContactPage> */}
+      </BannerContactPage>
     </>
   );
 };

@@ -13,9 +13,9 @@ export const NavbarHome = styled.nav<{ $home: boolean }>`
   justify-content: space-evenly;
   align-items: center;
   height: 123px;
+  width: 100%;
   z-index: 600;
   position: ${(props) => (props.$home ? "fixed" : "unset")};
-  width: 100vw;
   text-decoration: none;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -25,7 +25,7 @@ export const NavbarHome = styled.nav<{ $home: boolean }>`
     text-decoration: none;
     padding: 0 1% 2.5%;
     color: ${(props) => (props.$home ? "black" : "#018291")};
-    fontsize: 15px;
+    font-size: 1vw;
     font-weight: 400;
 
     &:hover {
@@ -46,8 +46,12 @@ export const NavbarHome = styled.nav<{ $home: boolean }>`
 export const NavbarLeft = styled.div`
   height: 123px;
   display: flex;
-  padding-left: 10%;
-  background: red;
+  width: 25%;
+  align-items: center;
+
+  @media ${device.tablet} {
+    justify-content: center;
+  }
 `;
 
 export const NavbarRight = styled.div`
@@ -55,61 +59,36 @@ export const NavbarRight = styled.div`
   height: 123px;
   display: flex;
   flex-direction: column;
-  background: green;
 `;
 
 export const NavbarRightTop = styled.div`
   height: 50%;
-  border: 2px solid blue;
-`;
-
-export const NavbarRightBottom = styled.div`
-  height: 50%;
-  border: 2px solid black;
   display: flex;
   align-items: flex-end;
-`;
-
-export const NavDiv = styled.div<{ $mobile: boolean }>`
-  width: 50%;
-  height: ${(props) => (props.$mobile ? "80px" : "123px;")};
-  display: flex;
-  align-items: center;
-  padding-left: ${(props) => (props.$mobile ? "0" : " 10%")};
-  flex-direction: column;
-  justify-content: ${(props) => (props.$mobile ? "flex-end" : "center")};
-`;
-
-export const NavDivLogo = styled.div`
-  width: 50%;
-  height: 123px;
-  display: flex;
-  align-items: center;
-  padding-left: 10%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-end;
+  padding-right: 3.6vw;
+  font-size: 13px;
 
   @media ${device.tablet} {
+    height: 30%;
+    justify-content: center;
     align-items: center;
-    height: 80px;
-    padding-left: 0;
-    height: 80px;
+    padding-right: 0;
   }
 `;
 
-export const NavDivRight = styled.div<{ $mobile: boolean }>`
-  padding-left: ${(props) => (props.$mobile ? "0" : "5%")};
-  flex-direction: row;
-  padding-right: ${(props) => (props.$mobile ? "0" : "60%")};
-  align-items: flex-end;
+export const NavbarRightBottom = styled.div<{ $isBreakPoint: boolean }>`
+  height: 50%;
+  display: flex;
+  align-items: ${(props) => (props.$isBreakPoint ? "center" : "flex-end")};
+  justify-content: ${(props) => (props.$isBreakPoint ? "flex-end" : "unset")};
+  padding-right: ${(props) => (props.$isBreakPoint ? "3.4vw" : 0)};
 
   @media ${device.tablet} {
-    align-items: center;
+    height: 70%;
     justify-content: center;
-    justify-content: flex-start;
-    padding-left 0;
-    align-content: flex-start;
+    align-items: center;
+    padding-right: 0;
   }
 `;
 
@@ -124,17 +103,6 @@ export const MenuIcon = styled(MenuOutlined)`
   @media ${device.tablet} {
     margin-left: auto;
     margin-right: auto;
-  }
-`;
-
-export const NavDivRightAlign = styled.div`
-  text-align: right;
-  justify-content: flex-end;
-  font-size: 14px;
-  @media ${device.tablet} {
-    align-items: center;
-    padding-left 0;
-    justify-content: flex-start;
   }
 `;
 
@@ -166,7 +134,6 @@ export const EditedBtn = styled(Button)`
 `;
 
 export const BannerContainer = styled.div<{ $imagePath: string }>`
-  width: 100vw;
   height: 30vh;
   display: flex;
   flex-direction: column;

@@ -1,11 +1,12 @@
 import React from "react";
+import { Lato } from "@next/font/google";
+
 import {
   BannerBreadcrumb,
   BannerContainer,
   BannerHeader,
   BannerLink,
 } from "./styled";
-import { Lato } from "@next/font/google";
 
 const lato = Lato({
   weight: ["100", "400", "700"],
