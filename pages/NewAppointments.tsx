@@ -9,14 +9,17 @@ const NewAppointments: React.FC<INewAppointmentsProps> = () => {
   return (
     <>
       <Header home={false} />
-      <Banner mainHeader={"New Appointments"} breadcrumb={"New Appointments"} imagePath={"/bannerimg1.png"} />
-  
-          
-      <iframe src={"https://meetings.hubspot.com/vibudha"} width={"100%"} height={"1000px"}  >
-      </iframe>
-     
-      
+      <Banner
+        mainHeader={"New Appointments"}
+        breadcrumb={"New Appointments"}
+        imagePath={"/bannerimg1.png"}
+      />
 
+      <iframe
+        src={"https://meetings.hubspot.com/vibudha"}
+        width={"100%"}
+        height={"1000px"}
+      ></iframe>
     </>
   );
 };
