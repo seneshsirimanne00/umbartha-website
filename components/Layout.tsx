@@ -12,7 +12,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }) => {
   return (
     <>
       {children}
-      <Footer />
+      <Footer contactPage={false} />
     </>
   );
 };

@@ -15,6 +15,7 @@ import {
   PosterBox,
   PosterBoxHeader,
   PosterBoxPara,
+  PosterImg,
   PosterSection,
   PosterSectionLeft,
   PosterSectionRight,
@@ -57,9 +58,9 @@ export default function Home() {
             A Dedicated Team committed to supporting with a listening ear
           </IntroBoxHeader>
           <IntroBoxSubHeader>
-            "Our vision, mission, and core values guide us as we seek to fulfill
-            our calling to support and care for people who need to be heard and
-            understood."
+            &quot;Our vision, mission, and core values guide us as we seek to
+            fulfill our calling to support and care for people who need to be
+            heard and understood.&quot;
           </IntroBoxSubHeader>
         </IntroBox>
       </IntroSection>
@@ -72,7 +73,7 @@ export default function Home() {
           </ServicesTitleSection>
           <div>
             <Row>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service1.png"
@@ -87,7 +88,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service2.png"
@@ -95,6 +96,7 @@ export default function Home() {
                     width={100}
                     height={100}
                   />
+
                   <ServiceBoxHeader>Couples session</ServiceBoxHeader>
                   <ServiceBoxSubHeader>
                     This is where we create a platform for couples in need of
@@ -102,7 +104,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service3.png"
@@ -121,7 +123,7 @@ export default function Home() {
             </Row>
 
             <Row>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service4.png"
@@ -136,7 +138,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service5.png"
@@ -151,7 +153,7 @@ export default function Home() {
                   </ServiceBoxSubHeader>
                 </ServiceBox>
               </Col>
-              <Col xs={2} sm={4} md={6} lg={8}>
+              <Col xs={24} sm={12} md={8} lg={8}>
                 <ServiceBox>
                   <Image
                     src="/service6.png"
@@ -176,7 +178,7 @@ export default function Home() {
           </PosterBoxHeader>
           <PosterSection>
             <PosterSectionLeft>
-              <Image src="/poster.jpg" alt="poster" height={700} width={550} />
+              <PosterImg src="/poster.jpg" alt="poster" />
             </PosterSectionLeft>
             <PosterSectionRight>
               <PosterBoxPara>
@@ -185,7 +187,9 @@ export default function Home() {
                 needs special care and help is apparent and cannot be ignored.
                 This segment comprises mothers who are raising their children
                 alone and taking up both the roles of both mother and father –
-                ‘Single Mums’. Single mums are courageous women who step up by
+                ‘Single Mums’.
+                <br />
+                <br /> Single mums are courageous women who step up by
                 themselves to do the job of two, and face life’s challenges
                 boldly for the sake of their children. They take on multiple
                 roles of being provider, caretaker, nurturer, teacher, protector
@@ -195,25 +199,30 @@ export default function Home() {
                 commitment and selflessness which are evidently attributes of
                 single mums. However, the daunting task of fulfilling multiple
                 responsibilities and making ends meet in today’s challenging
-                environment can sometimes be exhausting and overwhelming. That
-                is why we at Umbartha (Beyond Thresholds) would like to join
-                hands with these super women and provide them and their children
-                with the moral and emotional support that they need to “keep on
-                keeping on”. ‘Making Our Motherhood Significant’ or ‘MOMS’ is an
+                environment can sometimes be exhausting and overwhelming.
+                <br />
+                <br /> That is why we at Umbartha (Beyond Thresholds) would like
+                to join hands with these super women and provide them and their
+                children with the moral and emotional support that they need to
+                “keep on keeping on”.
+                <br />
+                <br /> ‘Making Our Motherhood Significant’ or ‘MOMS’ is an
                 initiative designed to empower, enhance and enrich the lives of
                 single mums and their children and help them to work through a
-                wide range of issues and challenges that they face. A series of
-                6 workshops will be conducted fortnightly by professionally
-                trained facilitators. While the mums attend the workshop on the
-                topic of the day, their kids too will attend a session
-                especially tailored for them on the same topic. What is unique
-                about this program is this two-pronged approach which equips the
-                mums and their children to face their challenges and overcome
-                them together. Times of fellowship and fun activities are woven
-                into the program to ensure a good balance of work and play for
-                both the mums and the children! Umbartha invites single mums to
-                register for the MOMS program and start this journey of
-                togetherness with us. See you at the threshold…
+                wide range of issues and challenges that they face.
+                <br />
+                <br /> A series of 6 workshops will be conducted fortnightly by
+                professionally trained facilitators. While the mums attend the
+                workshop on the topic of the day, their kids too will attend a
+                session especially tailored for them on the same topic. What is
+                unique about this program is this two-pronged approach which
+                equips the mums and their children to face their challenges and
+                overcome them together. Times of fellowship and fun activities
+                are woven into the program to ensure a good balance of work and
+                play for both the mums and the children! <br />
+                <br /> Umbartha invites single mums to register for the MOMS
+                program and start this journey of togetherness with us. See you
+                at the threshold…
               </PosterBoxPara>
             </PosterSectionRight>
           </PosterSection>

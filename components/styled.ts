@@ -1,16 +1,20 @@
-import { Button } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+import { Button, Drawer, Input } from "antd";
+import Item from "antd/es/descriptions/Item";
+import Link from "next/link";
 import styled from "styled-components";
+import { device } from "../devices";
 
-export const NavbarHome = styled.nav`
+export const NavbarHome = styled.nav<{ $home: boolean }>`
   font-family: "Lato", sans-serif;
   height: 50px;
-  background: #fcfcfca3;
+  background: ${(props) => (props.$home ? "#fcfcfca3" : "#ffff")};
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 123px;
   z-index: 600;
-  position: fixed;
+  position: ${(props) => (props.$home ? "fixed" : "unset")};
   width: 100vw;
   text-decoration: none;
   letter-spacing: 1px;
@@ -19,8 +23,8 @@ export const NavbarHome = styled.nav`
 
   a {
     text-decoration: none;
-    padding: 0 4% 8% 4%;
-    color: black;
+    padding: 0 1% 2.5%;
+    color: ${(props) => (props.$home ? "black" : "#018291")};
     fontsize: 15px;
     font-weight: 400;
 
@@ -28,42 +32,55 @@ export const NavbarHome = styled.nav`
       border-bottom: 4px solid #46c4c0;
     }
   }
-`;
 
-export const Navbar = styled.nav`
-  font-family: "Lato", sans-serif;
-  height: 50px;
-  background: #ffff;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 123px;
-  width: 100vw;
+  @media (max-width: 999px) {
+    background: #ffff;
+  }
 
-  a {
-    text-decoration: none;
-    padding: 0 4% 8% 4%;
-    color: #018291;
-    fontsize: 15px;
-    letter-spacing: 1px;
-
-    &:hover {
-      border-bottom: 4px solid #46c4c0;
-    }
+  @media ${device.tablet} {
+    height: 165px;
+    flex-direction: column;
   }
 `;
 
-export const NavDiv = styled.nav`
-  width: 50%;
+export const NavbarLeft = styled.div`
   height: 123px;
   display: flex;
-  align-items: center;
   padding-left: 10%;
-  flex-direction: column;
-  justify-content: center;
+  background: red;
 `;
 
-export const NavDivLogo = styled.nav`
+export const NavbarRight = styled.div`
+  width: 40%;
+  height: 123px;
+  display: flex;
+  flex-direction: column;
+  background: green;
+`;
+
+export const NavbarRightTop = styled.div`
+  height: 50%;
+  border: 2px solid blue;
+`;
+
+export const NavbarRightBottom = styled.div`
+  height: 50%;
+  border: 2px solid black;
+  display: flex;
+  align-items: flex-end;
+`;
+
+export const NavDiv = styled.div<{ $mobile: boolean }>`
+  width: 50%;
+  height: ${(props) => (props.$mobile ? "80px" : "123px;")};
+  display: flex;
+  align-items: center;
+  padding-left: ${(props) => (props.$mobile ? "0" : " 10%")};
+  flex-direction: column;
+  justify-content: ${(props) => (props.$mobile ? "flex-end" : "center")};
+`;
+
+export const NavDivLogo = styled.div`
   width: 50%;
   height: 123px;
   display: flex;
@@ -72,19 +89,75 @@ export const NavDivLogo = styled.nav`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media ${device.tablet} {
+    align-items: center;
+    height: 80px;
+    padding-left: 0;
+    height: 80px;
+  }
 `;
 
-export const NavDivRight = styled(NavDiv)`
-  padding-left: 5%;
+export const NavDivRight = styled.div<{ $mobile: boolean }>`
+  padding-left: ${(props) => (props.$mobile ? "0" : "5%")};
   flex-direction: row;
-  padding-right: 60%;
+  padding-right: ${(props) => (props.$mobile ? "0" : "60%")};
   align-items: flex-end;
+
+  @media ${device.tablet} {
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+    padding-left 0;
+    align-content: flex-start;
+  }
 `;
 
-export const NavDivRightAlign = styled(NavDiv)`
+export const MenuIcon = styled(MenuOutlined)`
+  font-size: 26px;
+  padding: 10px;
+  background: #46c4c0;
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+
+  @media ${device.tablet} {
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+export const NavDivRightAlign = styled.div`
   text-align: right;
   justify-content: flex-end;
   font-size: 14px;
+  @media ${device.tablet} {
+    align-items: center;
+    padding-left 0;
+    justify-content: flex-start;
+  }
+`;
+
+export const MobileHeaderDrawer = styled(Drawer)`
+  div {
+    background-color: #46c4c0;
+  }
+`;
+
+export const MobileHeaderContainer = styled.div`
+  display: flex;
+  padding: 20px 0 0 0;
+  height: 40vh;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+export const MobileHeaderLink = styled(Link)`
+  padding 20px;
+  color: white;
+  &:hover {
+    background-color: #018291;
+  }
 `;
 
 export const EditedBtn = styled(Button)`
@@ -133,7 +206,6 @@ export const BannerLink = styled.a`
 
 export const FooterContainer = styled.div<{ $footerImg: string }>`
   height: 40vh;
-  width: 100vw;
   background-image: url(${(props) => props.$footerImg});
   background-repeat: no-repeat;
   background-position: center;
@@ -141,6 +213,10 @@ export const FooterContainer = styled.div<{ $footerImg: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 550px) {
+    height: unset;
+  }
 `;
 
 export const FooterWhiteBox = styled.div`
@@ -151,6 +227,16 @@ export const FooterWhiteBox = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
+
+  @media ${device.tablet} {
+    width: unset;
+  }
+
+  @media (max-width: 550px) {
+    background: none;
+    flex-direction: column;
+    height: unset;
+  }
 `;
 
 export const FooterIconContainer = styled.div`
@@ -166,18 +252,24 @@ export const FooterIconContainer = styled.div`
   font-weight: 400;
   padding: 0 2%;
   justify-content: space-evenly;
+
+  @media (max-width: 550px) {
+    height: unset;
+    width: unset;
+    margin: 20px;
+  }
 `;
 
-export const IconCircle = styled.div`
+export const IconCircle = styled.div<{ $contactPage: boolean }>`
   width: 69px;
   height: 69px;
-  background: #80dcf1;
+  background: ${(props) => (props.$contactPage ? "none" : "#80dcf1")};
   border-radius: 100px;
-  color: white;
+  color: ${(props) => (props.$contactPage ? "#80dcf1" : "white")};
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 27px;
+  font-size: ${(props) => (props.$contactPage ? "40px" : "27px")};
   cursor: pointer;
   &:hover {
     color: black;
@@ -200,4 +292,10 @@ export const IconPara = styled.p`
   font-size: 90%;
   font-weight: 300;
   line-height: 1.5em;
+`;
+
+export const FormInput = styled(Input)`
+  width: 100%;
+  border-radius: 0;
+  font-family: "Lato", sans-serif;
 `;

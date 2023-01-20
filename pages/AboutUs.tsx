@@ -89,7 +89,6 @@ const AboutUs: React.FC<IAboutUsProps> = () => {
   return (
     <>
       <Header home={false} />
-      <h1>AboutUs</h1>
       <Banner mainHeader={"About US"} breadcrumb={"About"} imagePath={"/bannerimg1.png"} />
   <br/>
   <AboutusContainer>
