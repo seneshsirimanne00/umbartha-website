@@ -1,4 +1,5 @@
 import React from "react";
+
 import Header from "../components/Header";
 import { EditedBtn } from "../components/styled";
 import { BUTTONS } from "../constants";

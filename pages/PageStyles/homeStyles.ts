@@ -161,6 +161,10 @@ export const PosterBox = styled.div`
   background-size: cover;
 `;
 
+export const PosterImg = styled.img`
+  height: 90vh;
+`;
+
 export const PosterBoxHeader = styled.h1`
   font-family: "Lato", sans-serif;
   margin: 0;
@@ -174,17 +178,18 @@ export const PosterBoxPara = styled.p`
   font-family: "Lato", sans-serif;
   margin: 0;
   font-weight: 500;
-  font-size: 110%;
+  font-size: 90%;
   line-height: 1.6em;
   text-align: left;
-  color: #261552;
+  color: white;
 `;
 
 export const PosterSection = styled.div`
   padding-top: 5vh;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 
   @media ${device.tablet} {
     flex-direction: column;
@@ -193,26 +198,17 @@ export const PosterSection = styled.div`
 
 export const PosterSectionLeft = styled.div`
   display: flex;
-  width: 39vw;
-  justify-content: flex-end;
+  align-items: center;
   padding-bottom: 6vh;
-
-  @media ${device.tablet} {
-    width: unset;
-    justify-content: center;
-  }
+  justify-content: center;
 `;
 
 export const PosterSectionRight = styled.div`
   display: flex;
-  width: 50vw;
-  align-items: flex-start;
-  padding: 6vh 3vw;
-
-  @media ${device.tablet} {
-    width: unset;
-    padding: 6vh 10vw;
-  }
+  align-items: center;
+  padding: 6vh 10vw;
+  padding-top: 0;
+}
 `;
 
 export const BookingBanner = styled.div`
@@ -252,6 +248,10 @@ export const ClientsRBoxesContainer = styled.div`
   text-align: center;
   flex-direction: row;
   align-items: center;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
 `;
 
 export const ClientsRBox = styled.div`
@@ -263,4 +263,8 @@ export const ClientsRBox = styled.div`
   margin: 1vw;
   background: #ffffff8a;
   margin-bottom: 5vh;
+
+  @media ${device.tablet} {
+    width: unset;
+  }
 `;
