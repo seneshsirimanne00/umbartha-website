@@ -38,6 +38,7 @@ import {
   SecondaryButton,
   SecondaryHeader,
 } from "./CommonStyles";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,7 +71,9 @@ export default function Home() {
         <ServicesBox>
           <ServicesTitleSection>
             <ServiceTitleSecHeader>OUR SERVICES</ServiceTitleSecHeader>
-            <ServiceTitleButton>VIEW ALL →</ServiceTitleButton>
+            <Link href="/AboutUs">
+              <ServiceTitleButton>VIEW ALL →</ServiceTitleButton>
+            </Link>
           </ServicesTitleSection>
           <div>
             <Row>
@@ -233,7 +236,9 @@ export default function Home() {
       <BookingBanner>
         <SecondaryHeader>WE’RE HERE TO HELP YOU</SecondaryHeader>
         <MainHeader>GET IN TOUCH NOW</MainHeader>
-        <PrimaryButton>MAKE A BOOKING</PrimaryButton>
+        <Link href="/NewAppointments">
+          <PrimaryButton>MAKE A BOOKING</PrimaryButton>
+        </Link>
       </BookingBanner>
 
       <ClientsSection>
@@ -264,7 +269,9 @@ export default function Home() {
               </ParaJosefin>
             </ClientsRBox>
           </ClientsRBoxesContainer>
-          <SecondaryButton>READ MORE</SecondaryButton>
+          <Link href="/ClientReviews">
+            <SecondaryButton>READ MORE</SecondaryButton>
+          </Link>
         </ClientsContainer>
       </ClientsSection>
     </>

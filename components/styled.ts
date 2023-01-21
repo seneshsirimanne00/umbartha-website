@@ -266,3 +266,8 @@ export const FormInput = styled(Input)`
   border-radius: 0;
   font-family: "Lato", sans-serif;
 `;
+
+export const LinkNoStyle = styled.a`
+  color: inherit;
+  text-decoration: none;
+`;
