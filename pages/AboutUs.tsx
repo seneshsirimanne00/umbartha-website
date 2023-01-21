@@ -92,7 +92,7 @@ const AboutUs: React.FC<IAboutUsProps> = () => {
 
   return (
     <>
-      <Header home={false} />
+      <Header home={false} linkNumber={2} />
       <Banner
         mainHeader={"About US"}
         breadcrumb={"About"}

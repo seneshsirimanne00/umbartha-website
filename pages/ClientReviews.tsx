@@ -14,7 +14,7 @@ export interface IClientReviewsProps {}
 const ClientReviews: React.FC<IClientReviewsProps> = () => {
   return (
     <>
-      <Header home={false} />
+      <Header home={false} linkNumber={4} />
       <Banner
         mainHeader={"Client Reviews"}
         breadcrumb={"Reviews"}

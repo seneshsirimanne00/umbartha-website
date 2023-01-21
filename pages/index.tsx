@@ -51,7 +51,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header home={true} />
+      <Header home={true} linkNumber={1} />
       <Banner></Banner>
 
       <IntroSection>

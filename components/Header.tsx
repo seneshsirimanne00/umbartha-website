@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 
 import {
+  HeaderNextLink,
   MenuIcon,
   MobileHeaderContainer,
   MobileHeaderDrawer,
@@ -16,6 +17,7 @@ import {
 
 export interface IHeaderProps {
   home: boolean;
+  linkNumber: number;
 }
 
 const useMediaQuery = (width: any) => {
@@ -43,7 +45,7 @@ const useMediaQuery = (width: any) => {
   return targetReached;
 };
 
-const Header: React.FC<IHeaderProps> = ({ home }) => {
+const Header: React.FC<IHeaderProps> = ({ home, linkNumber }) => {
   const isBreakpoint = useMediaQuery(999);
 
   const [open, setOpen] = useState(false);
@@ -65,14 +67,40 @@ const Header: React.FC<IHeaderProps> = ({ home }) => {
         open={open}
       >
         <MobileHeaderContainer>
-          <MobileHeaderLink href="/">Home</MobileHeaderLink>
-          <MobileHeaderLink href="/AboutUs">About</MobileHeaderLink>
-          <MobileHeaderLink href="/Events">Events</MobileHeaderLink>
-          <MobileHeaderLink href="/ClientReviews">
+          <MobileHeaderLink
+            href="/"
+            $selected={linkNumber === 1 ? true : false}
+          >
+            Home
+          </MobileHeaderLink>
+          <MobileHeaderLink
+            href="/AboutUs"
+            $selected={linkNumber === 2 ? true : false}
+          >
+            About
+          </MobileHeaderLink>
+          <MobileHeaderLink
+            href="/Events"
+            $selected={linkNumber === 3 ? true : false}
+          >
+            Events
+          </MobileHeaderLink>
+          <MobileHeaderLink
+            href="/ClientReviews"
+            $selected={linkNumber === 4 ? true : false}
+          >
             Client Reviews
           </MobileHeaderLink>
-          <MobileHeaderLink href="/ContactUs">ContactUs</MobileHeaderLink>
-          <MobileHeaderLink href="/NewAppointments">
+          <MobileHeaderLink
+            href="/ContactUs"
+            $selected={linkNumber === 5 ? true : false}
+          >
+            ContactUs
+          </MobileHeaderLink>
+          <MobileHeaderLink
+            href="/NewAppointments"
+            $selected={linkNumber === 6 ? true : false}
+          >
             New Appointments
           </MobileHeaderLink>
         </MobileHeaderContainer>
@@ -85,12 +113,48 @@ const Header: React.FC<IHeaderProps> = ({ home }) => {
           <NavbarRightTop>Contact us: 0778495758</NavbarRightTop>
           {isBreakpoint ? (
             <NavbarRightBottom $isBreakPoint={false}>
-              <Link href="/">Home</Link>
-              <Link href="/AboutUs">About</Link>
-              <Link href="/Events">Events</Link>
-              <Link href="/ClientReviews">Client Reviews</Link>
-              <Link href="/ContactUs">ContactUs</Link>
-              <Link href="/NewAppointments">New Appointments</Link>
+              <HeaderNextLink
+                href="/"
+                $home={home}
+                $bottomLine={linkNumber === 1 ? true : false}
+              >
+                Home
+              </HeaderNextLink>
+              <HeaderNextLink
+                $home={home}
+                $bottomLine={linkNumber === 2 ? true : false}
+                href="/AboutUs"
+              >
+                About
+              </HeaderNextLink>
+              <HeaderNextLink
+                $home={home}
+                $bottomLine={linkNumber === 3 ? true : false}
+                href="/Events"
+              >
+                Events
+              </HeaderNextLink>
+              <HeaderNextLink
+                $home={home}
+                $bottomLine={linkNumber === 4 ? true : false}
+                href="/ClientReviews"
+              >
+                Client Reviews
+              </HeaderNextLink>
+              <HeaderNextLink
+                $home={home}
+                $bottomLine={linkNumber === 5 ? true : false}
+                href="/ContactUs"
+              >
+                ContactUs
+              </HeaderNextLink>
+              <HeaderNextLink
+                $home={home}
+                $bottomLine={linkNumber === 6 ? true : false}
+                href="/NewAppointments"
+              >
+                New Appointments
+              </HeaderNextLink>
             </NavbarRightBottom>
           ) : (
             <NavbarRightBottom $isBreakPoint={true}>

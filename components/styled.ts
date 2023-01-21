@@ -21,18 +21,6 @@ export const NavbarHome = styled.nav<{ $home: boolean }>`
   white-space: nowrap;
   transition: color 0.2s ease 0s, background-color 0.2s ease 0s;
 
-  a {
-    text-decoration: none;
-    padding: 0 1% 2.5%;
-    color: ${(props) => (props.$home ? "black" : "#018291")};
-    font-size: 1vw;
-    font-weight: 400;
-
-    &:hover {
-      border-bottom: 4px solid #46c4c0;
-    }
-  }
-
   @media (max-width: 999px) {
     background: #ffff;
   }
@@ -40,6 +28,22 @@ export const NavbarHome = styled.nav<{ $home: boolean }>`
   @media ${device.tablet} {
     height: 165px;
     flex-direction: column;
+  }
+`;
+
+export const HeaderNextLink = styled(Link)<{
+  $home: boolean;
+  $bottomLine: boolean;
+}>`
+  text-decoration: none;
+  padding: 0 1% 2.5%;
+  color: ${(props) => (props.$home ? "black" : "#018291")};
+  font-size: 1vw;
+  font-weight: 400;
+  border-bottom: ${(props) => (props.$bottomLine ? "4px solid #46c4c0" : " ")};
+
+  &:hover {
+    border-bottom: 4px solid #46c4c0;
   }
 `;
 
@@ -120,9 +124,10 @@ export const MobileHeaderContainer = styled.div`
   justify-content: space-around;
 `;
 
-export const MobileHeaderLink = styled(Link)`
+export const MobileHeaderLink = styled(Link)<{ $selected: boolean }>`
   padding 20px;
   color: white;
+  background-color: ${(props) => (props.$selected ? "#018291" : " ")}; 
   &:hover {
     background-color: #018291;
   }

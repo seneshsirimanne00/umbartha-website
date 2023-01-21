@@ -8,7 +8,7 @@ export interface INewAppointmentsProps {}
 const NewAppointments: React.FC<INewAppointmentsProps> = () => {
   return (
     <>
-      <Header home={false} />
+      <Header home={false} linkNumber={6} />
       <Banner
         mainHeader={"New Appointments"}
         breadcrumb={"New Appointments"}

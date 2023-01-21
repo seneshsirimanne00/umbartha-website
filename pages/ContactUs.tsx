@@ -49,7 +49,7 @@ const ContactUs: React.FC<IContactUsProps> = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header home={false} />
+      <Header home={false} linkNumber={5} />
       <Banner
         mainHeader={"Contact Us"}
         breadcrumb={"Contact"}
